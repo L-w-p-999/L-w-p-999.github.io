@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="分享前言因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。java script中的几条链和this指">
+  <meta name="description" content="分享前言因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。java script中的几条链和this指向1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="My New Post">
 <meta property="og:url" content="http://example.com/2024/11/01/My-New-Post-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="分享前言因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。java script中的几条链和this指">
+<meta property="og:description" content="分享前言因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。java script中的几条链和this指向1">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-11-01T11:52:59.000Z">
-<meta property="article:modified_time" content="2024-11-24T04:08:27.271Z">
+<meta property="article:modified_time" content="2024-11-24T04:12:21.402Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-11-24 12:08:27" itemprop="dateModified" datetime="2024-11-24T12:08:27+08:00">2024-11-24</time>
+                <time title="Modified: 2024-11-24 12:12:21" itemprop="dateModified" datetime="2024-11-24T12:12:21+08:00">2024-11-24</time>
               </span>
 
           
@@ -194,12 +194,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
-
-<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"><a href="#因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。" class="headerlink" title="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"></a>因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。</h3><h2 id="java-script中的几条链和this指向"><a href="#java-script中的几条链和this指向" class="headerlink" title="java script中的几条链和this指向"></a>java script中的几条链和this指向</h2><h2 id="1-js中的原型链"><a href="#1-js中的原型链" class="headerlink" title="1.js中的原型链"></a>1.js中的原型链</h2><p>js中对象这种引用数据类型十分常用，并且在面向对象编程时往往发挥关键作用。js可以进行面向过程的编程和面向对象编程的语言，其中js面向对象编程通过原型来实现。</p>
+        <h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"><a href="#因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。" class="headerlink" title="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"></a>因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。</h3><h2 id="java-script中的几条链和this指向"><a href="#java-script中的几条链和this指向" class="headerlink" title="java script中的几条链和this指向"></a>java script中的几条链和this指向</h2><h2 id="1-js中的原型链"><a href="#1-js中的原型链" class="headerlink" title="1.js中的原型链"></a>1.js中的原型链</h2><p>js中对象这种引用数据类型十分常用，并且在面向对象编程时往往发挥关键作用。js可以进行面向过程的编程和面向对象编程的语言，其中js面向对象编程通过原型来实现。</p>
 <p>构造函数时，实例化的成员会携带一个proto指向构造出的函数的原型对象，也就是指向了它的“父亲”的原型对象，它的父亲的原型对象，也有一个proto指向了Object的原型对象，然后Object的原型对象里也有一个proto指向了null，这个是原型链。</p>
 <p>原型和原型链的意义是：使得 JavaScript 可以实现继承和代码复用。通过原型继承，可以从已有的对象创建新的对象，并且可以在新对象上添加、修改或删除属性和方法，达到代码复用和扩展的目的。原型链则使得 JavaScript 中的对象可以通过原型链向上查找属性和方法，这样就可以实现属性和方法的继承，减少重复代码的编写。</p>
-<!--more-->
+<span id="more"></span>
 
 <p>我在看文档学这个原型链的时候，发现可以自己手动去延长原型链，然后我就想原型链存在的意义是什么，后面接触文档多了发现，不能把在一个一个对象上都把方法写满，那要写死了，就现在我作为初级的js使用者，很多对象方法实际上都是从原型里去调用，对象的浅层能用的方法少之又少。</p>
 <h2 id="2-js的this指向"><a href="#2-js的this指向" class="headerlink" title="2.js的this指向"></a>2.js的this指向</h2><p>this的指向在普通函数和箭头函数中不一样，在普通函数中this是指向window</p>
