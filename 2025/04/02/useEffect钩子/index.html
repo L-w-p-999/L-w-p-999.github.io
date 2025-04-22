@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="useEffect1.1问题的发现事实上，第一次接触useEffecthook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2025/04/02/useEffect%E9%92%A9%E5%AD%90/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="useEffect1.1问题的发现事实上，第一次接触useEffecthook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-02T14:50:42.655Z">
+<meta property="article:modified_time" content="2025-04-06T07:24:22.144Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/04/02/useEffect%E9%92%A9%E5%AD%90/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -139,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -157,10 +162,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2025/04/02/useEffect%E9%92%A9%E5%AD%90/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -190,7 +194,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h1><h2 id="1-1问题的发现"><a href="#1-1问题的发现" class="headerlink" title="1.1问题的发现"></a>1.1问题的发现</h2><p>事实上，第一次接触<code>useEffect</code>hook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另一个页面。</p>
+        <h1 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h1><h2 id="1-1问题的发现"><a href="#1-1问题的发现" class="headerlink" title="1.1问题的发现"></a>1.1问题的发现</h2><p>事实上，第一次接触<code>useEffect</code>hook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另一个页面。</p>
 <p>我之所以非要去实现进入页面的时候一定是真实的用户数据而不是通过进行前端的操作去实现的暂时储存在前端的数据的理由是：我的页面逻辑会出现一定问题（my problems）。是的，因为mini写了一些屎山代码，如果我不去实现数据的实时更新就会出现一个功能的按键已经暴露出来了，但是这个按键没链接上后端。😫</p>
 <h2 id="1-2硬生生去解决一下这个问题"><a href="#1-2硬生生去解决一下这个问题" class="headerlink" title="1.2硬生生去解决一下这个问题"></a>1.2硬生生去解决一下这个问题</h2><p>没办法，为了解决自己代码形成的问题，我只能去想个办法，把最新的实时数据获取过来，并让这发生在每一次进入页面的时候。于是，我开始使用<code>useEffect</code>来实现我想要的功能，然后就发现<code>useEffect</code>好像并没有按照我想要的功能去实现。此时我就发现我根本不了解<code>useEffect</code>这个钩子是在干什么，我只是在瞎用。<code>useEffect</code>的第二个参数在填写空数组的时候并不是实现我想要的进入页面就渲染一次，而是只在组件第一次进行挂载的时候或者组件被删除重新挂载的时候去执行渲染。</p>
 <ol>
@@ -232,291 +236,30 @@
 
 <p>这样就会导致无限请求。🤣🤣🤣</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">Untitled</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2025-02-17 12:29:52" itemprop="dateCreated datePublished" datetime="2025-02-17T12:29:52+08:00">2025-02-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-03-08 16:01:20" itemprop="dateModified" datetime="2025-03-08T16:01:20+08:00">2025-03-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="本周分享"><a href="#本周分享" class="headerlink" title="本周分享"></a>本周分享</h1><h2 id="1-说点硬写Typescript的感悟吧"><a href="#1-说点硬写Typescript的感悟吧" class="headerlink" title="1.说点硬写Typescript的感悟吧"></a>1.说点硬写Typescript的感悟吧</h2><h3 id="1-1先说点废话"><a href="#1-1先说点废话" class="headerlink" title="1.1先说点废话"></a>1.1先说点废话</h3><p>TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。</p>
-<ol>
-<li>Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的），实际上写功能的时候很多js的代码很难在Ts里跑，不过我现阶段经常干的一件事情就是把自己写的Js代码一大坨一大坨地给Gpt然后让它给我转换成Ts代码，在实际操作上，gpt表现地很好，一般我自己写的代码没问题的情况下它能给我对应地生成相应的正确的Ts代码（但是我目前写的js代码量还有点小，gpt可以很轻松高效率地转换可能是因为这个，后续写mini的时候试试把更大坨的Js代码给它试试），这点很大减轻了我写tsx的压力。</li>
-<li>Ts扩展了Js，在Js的基础上，Ts引入了静态类型系统（我可以说变成了带着c语言味道的Js吗）需要写类型注解并可以进行类型推导。引入类、接口、泛型等等高级特性。这会使得它相对于Js爆错更多（这个我是真体会到了），但是会让整个代码的可维护性和可读性加强。</li>
-</ol>
-<h3 id="1-2Ts的扩展"><a href="#1-2Ts的扩展" class="headerlink" title="1.2Ts的扩展"></a>1.2Ts的扩展</h3><ol>
-<li><p>类型系统：引入类型声明</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">name</span>:<span class="built_in">string</span>=<span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">age</span>:<span class="built_in">number</span>=<span class="number">25</span>;</span><br></pre></td></tr></table></figure>
-
-<p>并支持复杂的类型（如联合类型<code>|</code>交叉类型<code>&amp;</code>这些等等</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [activeButton, setActiveButton] = useState&lt;<span class="built_in">string</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-
-<p><code>|</code>允许你的值可以是多个类型，比如这个activeButton就可以是null，也可以是string</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Address</span> &#123;</span><br><span class="line">  <span class="attr">street</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">city</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PersonWithAddress</span> = <span class="title class_">Person</span> &amp; <span class="title class_">Address</span>; </span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: <span class="title class_">PersonWithAddress</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span>,</span><br><span class="line">  <span class="attr">street</span>: <span class="string">&quot;123 Main St&quot;</span>,</span><br><span class="line">  <span class="attr">city</span>: <span class="string">&quot;Wonderland&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><code>&amp;</code>允许将多个类型合并为一个类型，它通过<code>&amp;</code>来连接不同的类型，当你希望某个变量同时具备多个类型的特性的时候，可以使用交叉类型。</p>
-</li>
-<li><p>引入接口，使得代码更加面向对象。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span> <span class="keyword">implements</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> <span class="attr">name</span>: <span class="built_in">string</span>, <span class="keyword">public</span> <span class="attr">age</span>: <span class="built_in">number</span></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>接口在Ts中用于定义对象的结构或契约的工具，它指定了对象应该有那些属性和方法，但不提供实现的细节，接口只关注“形状”而不关心具体的实现</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">user</span>: <span class="title class_">Person</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>接口还可以定义函数的类型</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Greet</span> &#123;</span><br><span class="line">  (<span class="attr">message</span>: <span class="built_in">string</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">greet</span>: <span class="title class_">Greet</span> = <span class="function">(<span class="params"><span class="attr">message</span>: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(message);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&quot;Hello, TypeScript!&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>在这个例子里Greet定义了一个函数的类型，要求它的实例是一个接受string类型的参数并返回void的函数。</p>
-<p>然后还有接口的继承，但是我现在还没太用到，我也不是很懂。</p>
-<p>3.泛型，Ts支持泛型，这使得开发者可以编写更加灵活、通用和可复用性强的代码。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> identity&lt;T&gt;(<span class="attr">arg</span>: T): T &#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = <span class="title function_">identity</span>(<span class="number">5</span>);        <span class="comment">// T 被推导为 number</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="title function_">identity</span>(<span class="string">&quot;Hello&quot;</span>);  <span class="comment">// T 被推导为 string</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这个函数使用了泛型参数<T>,表示该函数可以接受任何类型的参数，并且返回相同类型的结果。</p>
-<p><T>定义了这个函数是个泛型函数，（arg:T)定义了这个函数接受的参数可以是任何类型。：后面的那个T说明了这个函数返回的类型应该与传入的参数是一直的。</p>
-<p>4.类型推导，Ts可以自动推导变量的类型，减少开发者的手动声明。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;<span class="comment">//ts自动推导这个x的类型为number</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// TypeScript 推导 str 的类型是 string</span></span><br><span class="line"><span class="keyword">let</span> isActive = <span class="literal">true</span>;  <span class="comment">// TypeScript 推导 isActive 的类型是 boolean</span></span><br></pre></td></tr></table></figure>
-
-<p>还有很多的类型推导，比如自动推导这个数组是以什么数据类型构成的数组，自动推导函数返回值不用额外声明。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"><span class="attr">a</span>: <span class="built_in">number</span>, <span class="attr">b</span>: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;  <span class="comment">// TypeScript 推导返回值的类型是 number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"><span class="attr">name</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>;  <span class="comment">// TypeScript 推导返回值的类型是 string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>看ts看到类型推导的时候感觉和Js里的隐式转换很像，就去搜了下这和Js里的隐式转换有什么区别。</p>
-<p>隐式转换是Js中的一种行为，当操作的类型不匹配的时候，Js会尝试将他们转换成兼容的类型。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;10&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = num + str;  <span class="comment">// 隐式转换，结果是字符串 &quot;510&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);  <span class="comment">// 输出 &quot;510&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这个例子中5被自动自动转换成了字符串，这个加法操作就变成了连接操作。</p>
-<p>类型推导和隐式转换有着本质的不同，类型推导发生在编译时，它并不会去改变值得实际类型，而是推断出合适的类型，并用来进行类型检查。而隐式转换发生在运行时，实际值的类型发生了转换，转换成了另一种类型。</p>
-<p>这个不同就让类型推导是Ts里的一个优良的特性，让Ts的代码在运行的时候可以避免一些错误。而隐式转换让代码更简洁的同时会产生很多的错误和问题，而且这些问题通常是难以追踪的。隐式转换之所以叫隐式转换，我想原因应该是开发者无法显式地发现这些类型变化。</p>
-<h2 id="2-Js的隐式转换"><a href="#2-Js的隐式转换" class="headerlink" title="2.Js的隐式转换"></a>2.Js的隐式转换</h2><h3 id="2-1可能导致的安全问题"><a href="#2-1可能导致的安全问题" class="headerlink" title="2.1可能导致的安全问题"></a>2.1可能导致的安全问题</h3><p>Js的隐式转换通常会产生很多的问题，无法显式地看到转换导致很多难以追踪地错误。</p>
-<p>在+<code>、</code>-<code>、``==</code>这些操作时，隐式转换很可能发生以至于产生很多麻烦，比如使用<code>==</code>的时候经常会发生一些莫名奇妙的true，比如Js中把这个null和undefined在进行<code>==</code>操作的时候会出现true。然后0和false也是被认为是相等的。</p>
-<p>就比如</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (userInput == <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// 用户输入为空字符串、0 或 false 会导致这个条件为 true</span></span><br><span class="line">  <span class="comment">// 导致错误的逻辑执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个地方用<code>==</code>就不够安全，userInput的值可以为0，false和空字符串，这都会让这个<code>==</code>成立。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">userInput</span>: <span class="built_in">string</span> = <span class="string">&quot;0&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (userInput == <span class="number">0</span>) &#123;  <span class="comment">// TS 会报错：类型 &#x27;string&#x27; 和 &#x27;number&#x27; 不兼容</span></span><br><span class="line">  <span class="comment">// 不会执行此代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在Ts里通过强制的类型检查就让这种情况发生的可能性大大降低。然后其实用<code>===</code>这种严格的相等也可以解决这个问题。</p>
-<h3 id="2-2性能问题"><a href="#2-2性能问题" class="headerlink" title="2.2性能问题"></a>2.2性能问题</h3><p>虽然隐式转换的性能问题通常不显著，但在一些性能关键的应用中（如循环内的转换或大量数据的处理），隐式转换可能会增加额外的计算负担。尤其是在进行类型转换的逻辑不明确或难以追踪时，可能增加调试成本，导致代码运行效率低下。</p>
-<h3 id="2-3隐式转换带来的一些好处"><a href="#2-3隐式转换带来的一些好处" class="headerlink" title="2.3隐式转换带来的一些好处"></a>2.3隐式转换带来的一些好处</h3><p>隐式转换也有其优势，首先提高了代码的简洁性，少了很多显示的类型转换，不需要进行频繁的显式的转换。其次，这也提高了灵活性和宽容性，在处理不同类型的数据时可以更加宽容和灵活。</p>
-<h3 id="2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"><a href="#2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug" class="headerlink" title="2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"></a>2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug</h3><p>Js的创始人 <strong>Brendan Eich</strong> 本意是设计一个简单易用的脚本语言，能够快速把网页的交互功能实现，减少代码工作者的代码量。</p>
-<p>就比如<code>==</code>这个运算符在Js里可以实现不同类型的数据类型进行比较。我想他本人可能有意设计了隐式转换，没想到后面Js会更加考虑安全性和可维护性让隐式转换更多成了一种弊端。什么<code>null</code>等于<code>undefined</code>被认为是可行的，还有上面说的自动类型转换让开发者难以发觉这种类似的问题，实际上刚出现的时候作者不是想这么干，我想他那么牛，开发java又开发js的应该不会让这么不严谨的东西存在在自己的语言里。可以说，隐式转换是<strong>有意设计的特性</strong>，但它带来的副作用并不是开发者预期中的行为。随着开发经验的积累和语言的演变，隐式转换带来的问题逐渐被认识到并加以改进（例如 TypeScript 的出现、<code>strict mode</code>、以及对更严格的类型检查的推动）。</p>
-<p>用Ts这类的强类型语言来增强代码的安全性，用严格模式来禁用某些错误的Js特性来确保代码更加安全。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/01/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8Cthis%E6%8C%87%E5%90%91%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/01/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8Cthis%E6%8C%87%E5%90%91%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="post-title-link" itemprop="url">My New Post</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-11-01 19:52:59" itemprop="dateCreated datePublished" datetime="2024-11-01T19:52:59+08:00">2024-11-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-11-24 12:12:21" itemprop="dateModified" datetime="2024-11-24T12:12:21+08:00">2024-11-24</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h3 id="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"><a href="#因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。" class="headerlink" title="因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。"></a>因为一些地方学习不到位的原因，我在这个实习期间学习js碰到了很多问题，然后这一周本来想把这些都补补，但无奈和这个辩论队的任务重合，让我这个又准备不好辩论内容，又没时间把js上的问题逐一解决，只好用仅剩的时间从一开始的问题入手，把后面一些没有学扎实的内容它们的学习分到了下周去，然后分享的话就把这个最初遇到的原型链的问题和this指向的问题说说。</h3><h2 id="java-script中的几条链和this指向"><a href="#java-script中的几条链和this指向" class="headerlink" title="java script中的几条链和this指向"></a>java script中的几条链和this指向</h2><h2 id="1-js中的原型链"><a href="#1-js中的原型链" class="headerlink" title="1.js中的原型链"></a>1.js中的原型链</h2><p>js中对象这种引用数据类型十分常用，并且在面向对象编程时往往发挥关键作用。js可以进行面向过程的编程和面向对象编程的语言，其中js面向对象编程通过原型来实现。</p>
-<p>构造函数时，实例化的成员会携带一个proto指向构造出的函数的原型对象，也就是指向了它的“父亲”的原型对象，它的父亲的原型对象，也有一个proto指向了Object的原型对象，然后Object的原型对象里也有一个proto指向了null，这个是原型链。</p>
-<p>原型和原型链的意义是：使得 JavaScript 可以实现继承和代码复用。通过原型继承，可以从已有的对象创建新的对象，并且可以在新对象上添加、修改或删除属性和方法，达到代码复用和扩展的目的。原型链则使得 JavaScript 中的对象可以通过原型链向上查找属性和方法，这样就可以实现属性和方法的继承，减少重复代码的编写。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/11/01/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8Cthis%E6%8C%87%E5%90%91%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/11/01/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/01/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2024-11-01 18:39:49" itemprop="dateCreated datePublished" datetime="2024-11-01T18:39:49+08:00">2024-11-01</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -569,6 +312,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#useEffect"><span class="nav-number">1.</span> <span class="nav-text">useEffect</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1%E9%97%AE%E9%A2%98%E7%9A%84%E5%8F%91%E7%8E%B0"><span class="nav-number">1.1.</span> <span class="nav-text">1.1问题的发现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2%E7%A1%AC%E7%94%9F%E7%94%9F%E5%8E%BB%E8%A7%A3%E5%86%B3%E4%B8%80%E4%B8%8B%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">1.2硬生生去解决一下这个问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3useEffect%E5%92%8CuseCallback"><span class="nav-number">1.3.</span> <span class="nav-text">1.3useEffect和useCallback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4useMemo"><span class="nav-number">1.4.</span> <span class="nav-text">1.4useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5%E6%9C%80%E5%90%8E%E7%9C%8B%E4%B8%80%E4%B8%AA%E5%B7%A6%E8%84%9A%E8%B8%A9%E5%8F%B3%E8%84%9A%E5%8D%87%E5%A4%A9"><span class="nav-number">1.5.</span> <span class="nav-text">1.5最后看一个左脚踩右脚升天</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
