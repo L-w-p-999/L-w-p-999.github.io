@@ -22,17 +22,17 @@
 
   <meta name="description" content="本周分享1.说点硬写Typescript的感悟吧1.1先说点废话TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。  Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/index.html">
+<meta property="og:title" content="Ts的一点点介绍">
+<meta property="og:url" content="http://example.com/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="本周分享1.说点硬写Typescript的感悟吧1.1先说点废话TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。  Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-02-17T04:29:52.224Z">
-<meta property="article:modified_time" content="2025-03-08T08:01:20.877Z">
+<meta property="article:published_time" content="2025-04-22T04:47:35.000Z">
+<meta property="article:modified_time" content="2025-04-22T04:47:54.934Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">
+<link rel="canonical" href="http://example.com/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>Ts的一点点介绍 | Hexo</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Ts的一点点介绍
         </h1>
 
         <div class="post-meta">
@@ -172,16 +172,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-02-17 12:29:52" itemprop="dateCreated datePublished" datetime="2025-02-17T12:29:52+08:00">2025-02-17</time>
+              <time title="Created: 2025-04-22 12:47:35 / Modified: 12:47:54" itemprop="dateCreated datePublished" datetime="2025-04-22T12:47:35+08:00">2025-04-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-03-08 16:01:20" itemprop="dateModified" datetime="2025-03-08T16:01:20+08:00">2025-03-08</time>
-              </span>
 
           
 
@@ -254,7 +248,7 @@
 <h3 id="2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"><a href="#2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug" class="headerlink" title="2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"></a>2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug</h3><p>Js的创始人 <strong>Brendan Eich</strong> 本意是设计一个简单易用的脚本语言，能够快速把网页的交互功能实现，减少代码工作者的代码量。</p>
 <p>就比如<code>==</code>这个运算符在Js里可以实现不同类型的数据类型进行比较。我想他本人可能有意设计了隐式转换，没想到后面Js会更加考虑安全性和可维护性让隐式转换更多成了一种弊端。什么<code>null</code>等于<code>undefined</code>被认为是可行的，还有上面说的自动类型转换让开发者难以发觉这种类似的问题，实际上刚出现的时候作者不是想这么干，我想他那么牛，开发java又开发js的应该不会让这么不严谨的东西存在在自己的语言里。可以说，隐式转换是<strong>有意设计的特性</strong>，但它带来的副作用并不是开发者预期中的行为。随着开发经验的积累和语言的演变，隐式转换带来的问题逐渐被认识到并加以改进（例如 TypeScript 的出现、<code>strict mode</code>、以及对更严格的类型检查的推动）。</p>
 <p>用Ts这类的强类型语言来增强代码的安全性，用严格模式来禁用某些错误的Js特性来确保代码更加安全。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2></li>
+</li>
 </ol>
 
     </div>
@@ -271,13 +265,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/11/01/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8Cthis%E6%8C%87%E5%90%91%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" rel="prev" title="原型链和this指向的简单理解">
-      <i class="fa fa-chevron-left"></i> 原型链和this指向的简单理解
+    <a href="/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/" rel="prev" title="useEffect钩子">
+      <i class="fa fa-chevron-left"></i> useEffect钩子
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2025/04/02/useEffect%E9%92%A9%E5%AD%90/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -336,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%91%A8%E5%88%86%E4%BA%AB"><span class="nav-number">1.</span> <span class="nav-text">本周分享</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%AF%B4%E7%82%B9%E7%A1%AC%E5%86%99Typescript%E7%9A%84%E6%84%9F%E6%82%9F%E5%90%A7"><span class="nav-number">1.1.</span> <span class="nav-text">1.说点硬写Typescript的感悟吧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%85%88%E8%AF%B4%E7%82%B9%E5%BA%9F%E8%AF%9D"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1先说点废话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Ts%E7%9A%84%E6%89%A9%E5%B1%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2Ts的扩展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Js%E7%9A%84%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">2.Js的隐式转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E5%8F%AF%E8%83%BD%E5%AF%BC%E8%87%B4%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1可能导致的安全问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2性能问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%B8%A6%E6%9D%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A5%BD%E5%A4%84"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3隐式转换带来的一些好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E6%98%AF%E5%88%9B%E4%BD%9C%E8%80%85BE%E6%9C%89%E6%84%8F%E8%80%8C%E4%B8%BA%E4%B9%8B%E8%BF%98%E6%98%AF%E4%BB%96%E5%86%99%E5%BE%97%E5%A4%AA%E5%BF%AB%E6%90%9E%E5%87%BA%E6%9D%A5%E7%9A%84%E5%B0%8Fbug"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%91%A8%E5%88%86%E4%BA%AB"><span class="nav-number">1.</span> <span class="nav-text">本周分享</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%AF%B4%E7%82%B9%E7%A1%AC%E5%86%99Typescript%E7%9A%84%E6%84%9F%E6%82%9F%E5%90%A7"><span class="nav-number">1.1.</span> <span class="nav-text">1.说点硬写Typescript的感悟吧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%85%88%E8%AF%B4%E7%82%B9%E5%BA%9F%E8%AF%9D"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1先说点废话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2Ts%E7%9A%84%E6%89%A9%E5%B1%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2Ts的扩展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Js%E7%9A%84%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">2.Js的隐式转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E5%8F%AF%E8%83%BD%E5%AF%BC%E8%87%B4%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1可能导致的安全问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2性能问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%B8%A6%E6%9D%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A5%BD%E5%A4%84"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3隐式转换带来的一些好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E6%98%AF%E5%88%9B%E4%BD%9C%E8%80%85BE%E6%9C%89%E6%84%8F%E8%80%8C%E4%B8%BA%E4%B9%8B%E8%BF%98%E6%98%AF%E4%BB%96%E5%86%99%E5%BE%97%E5%A4%AA%E5%BF%AB%E6%90%9E%E5%87%BA%E6%9D%A5%E7%9A%84%E5%B0%8Fbug"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -350,7 +341,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

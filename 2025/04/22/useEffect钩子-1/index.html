@@ -22,17 +22,17 @@
 
   <meta name="description" content="useEffect1.1问题的发现事实上，第一次接触useEffecthook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2025/04/02/useEffect%E9%92%A9%E5%AD%90/index.html">
+<meta property="og:title" content="useEffect钩子">
+<meta property="og:url" content="http://example.com/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="useEffect1.1问题的发现事实上，第一次接触useEffecthook的时候，我并不非常清楚useEffect的机制是如何运行的，只知道它会让我的页面可以进行多样化的渲染操作。在写mini期间，我一直想实现一个很简单的功能，就是每次我点击我设置的底部导航栏并实现页面的跳转的时候，都可以实现页面的重渲染，这样我就可以让一个使用者在另一个页面进行了一个curd的同时，实时的将真实的数据反映到另">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-02T14:50:42.655Z">
-<meta property="article:modified_time" content="2025-04-06T07:24:22.144Z">
+<meta property="article:published_time" content="2025-04-22T04:46:50.000Z">
+<meta property="article:modified_time" content="2025-04-22T04:47:10.111Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2025/04/02/useEffect%E9%92%A9%E5%AD%90/">
+<link rel="canonical" href="http://example.com/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title> | Hexo</title>
+  <title>useEffect钩子 | Hexo</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/02/useEffect%E9%92%A9%E5%AD%90/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          useEffect钩子
         </h1>
 
         <div class="post-meta">
@@ -172,16 +172,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2025-04-02 22:50:42" itemprop="dateCreated datePublished" datetime="2025-04-02T22:50:42+08:00">2025-04-02</time>
+              <time title="Created: 2025-04-22 12:46:50 / Modified: 12:47:10" itemprop="dateCreated datePublished" datetime="2025-04-22T12:46:50+08:00">2025-04-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-04-06 15:24:22" itemprop="dateModified" datetime="2025-04-06T15:24:22+08:00">2025-04-06</time>
-              </span>
 
           
 
@@ -250,12 +244,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2025/02/17/Ts%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" rel="prev" title="">
-      <i class="fa fa-chevron-left"></i> 
+    <a href="/2025/04/22/let%E5%92%8Cvar%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" rel="prev" title="let和var的一些区别（持续更新）">
+      <i class="fa fa-chevron-left"></i> let和var的一些区别（持续更新）
     </a></div>
       <div class="post-nav-item">
-    <a href="/2025/04/03/let%E5%92%8Cvar%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
+    <a href="/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/" rel="next" title="Ts的一点点介绍">
+      Ts的一点点介绍 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -329,7 +323,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
