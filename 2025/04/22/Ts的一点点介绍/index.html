@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Ts的一点点介绍 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本周分享1.说点硬写Typescript的感悟吧1.1先说点废话TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。  Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ts的一点点介绍">
+<meta property="og:url" content="http://example.com/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="本周分享1.说点硬写Typescript的感悟吧1.1先说点废话TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。  Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-22T04:47:35.000Z">
+<meta property="article:modified_time" content="2025-04-22T04:47:54.934Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Ts的一点点介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2025-04-22T04:47:35.000Z" itemprop="datePublished">2025-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Ts的一点点介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="本周分享"><a href="#本周分享" class="headerlink" title="本周分享"></a>本周分享</h1><h2 id="1-说点硬写Typescript的感悟吧"><a href="#1-说点硬写Typescript的感悟吧" class="headerlink" title="1.说点硬写Typescript的感悟吧"></a>1.说点硬写Typescript的感悟吧</h2><h3 id="1-1先说点废话"><a href="#1-1先说点废话" class="headerlink" title="1.1先说点废话"></a>1.1先说点废话</h3><p>TypeScript是JavaScript的超集，也就是说ts吸收了js的特性，拥有js语言的所有功能，并在这些特性的基础上加以强化和扩展，也就是说ts是一个在js的基础上做了扩展的语言，拥有包含js所有功能并增加更多特性的语言。</p>
+<ol>
+<li>Ts包含所有有效的Js代码，任何合法的Js代码也是有效的Ts代码，甚至可以在Ts中直接运行（gpt说的），实际上写功能的时候很多js的代码很难在Ts里跑，不过我现阶段经常干的一件事情就是把自己写的Js代码一大坨一大坨地给Gpt然后让它给我转换成Ts代码，在实际操作上，gpt表现地很好，一般我自己写的代码没问题的情况下它能给我对应地生成相应的正确的Ts代码（但是我目前写的js代码量还有点小，gpt可以很轻松高效率地转换可能是因为这个，后续写mini的时候试试把更大坨的Js代码给它试试），这点很大减轻了我写tsx的压力。</li>
+<li>Ts扩展了Js，在Js的基础上，Ts引入了静态类型系统（我可以说变成了带着c语言味道的Js吗）需要写类型注解并可以进行类型推导。引入类、接口、泛型等等高级特性。这会使得它相对于Js爆错更多（这个我是真体会到了），但是会让整个代码的可维护性和可读性加强。</li>
+</ol>
+<h3 id="1-2Ts的扩展"><a href="#1-2Ts的扩展" class="headerlink" title="1.2Ts的扩展"></a>1.2Ts的扩展</h3><ol>
+<li><p>类型系统：引入类型声明</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">name</span>:<span class="built_in">string</span>=<span class="string">&quot;Alice&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> <span class="attr">age</span>:<span class="built_in">number</span>=<span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+
+<p>并支持复杂的类型（如联合类型<code>|</code>交叉类型<code>&amp;</code>这些等等</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [activeButton, setActiveButton] = useState&lt;<span class="built_in">string</span> | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p><code>|</code>允许你的值可以是多个类型，比如这个activeButton就可以是null，也可以是string</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Address</span> &#123;</span><br><span class="line">  <span class="attr">street</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">city</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">PersonWithAddress</span> = <span class="title class_">Person</span> &amp; <span class="title class_">Address</span>; </span><br><span class="line"><span class="keyword">let</span> <span class="attr">person</span>: <span class="title class_">PersonWithAddress</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">30</span>,</span><br><span class="line">  <span class="attr">street</span>: <span class="string">&quot;123 Main St&quot;</span>,</span><br><span class="line">  <span class="attr">city</span>: <span class="string">&quot;Wonderland&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>&amp;</code>允许将多个类型合并为一个类型，它通过<code>&amp;</code>来连接不同的类型，当你希望某个变量同时具备多个类型的特性的时候，可以使用交叉类型。</p>
+</li>
+<li><p>引入接口，使得代码更加面向对象。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span> <span class="keyword">implements</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"><span class="keyword">public</span> <span class="attr">name</span>: <span class="built_in">string</span>, <span class="keyword">public</span> <span class="attr">age</span>: <span class="built_in">number</span></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>接口在Ts中用于定义对象的结构或契约的工具，它指定了对象应该有那些属性和方法，但不提供实现的细节，接口只关注“形状”而不关心具体的实现</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">user</span>: <span class="title class_">Person</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">25</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>接口还可以定义函数的类型</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Greet</span> &#123;</span><br><span class="line">  (<span class="attr">message</span>: <span class="built_in">string</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">greet</span>: <span class="title class_">Greet</span> = <span class="function">(<span class="params"><span class="attr">message</span>: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(message);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">greet</span>(<span class="string">&quot;Hello, TypeScript!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子里Greet定义了一个函数的类型，要求它的实例是一个接受string类型的参数并返回void的函数。</p>
+<p>然后还有接口的继承，但是我现在还没太用到，我也不是很懂。</p>
+<p>3.泛型，Ts支持泛型，这使得开发者可以编写更加灵活、通用和可复用性强的代码。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> identity&lt;T&gt;(<span class="attr">arg</span>: T): T &#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> num = <span class="title function_">identity</span>(<span class="number">5</span>);        <span class="comment">// T 被推导为 number</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="title function_">identity</span>(<span class="string">&quot;Hello&quot;</span>);  <span class="comment">// T 被推导为 string</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这个函数使用了泛型参数<T>,表示该函数可以接受任何类型的参数，并且返回相同类型的结果。</p>
+<p><T>定义了这个函数是个泛型函数，（arg:T)定义了这个函数接受的参数可以是任何类型。：后面的那个T说明了这个函数返回的类型应该与传入的参数是一直的。</p>
+<p>4.类型推导，Ts可以自动推导变量的类型，减少开发者的手动声明。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">10</span>;<span class="comment">//ts自动推导这个x的类型为number</span></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// TypeScript 推导 str 的类型是 string</span></span><br><span class="line"><span class="keyword">let</span> isActive = <span class="literal">true</span>;  <span class="comment">// TypeScript 推导 isActive 的类型是 boolean</span></span><br></pre></td></tr></table></figure>
+
+<p>还有很多的类型推导，比如自动推导这个数组是以什么数据类型构成的数组，自动推导函数返回值不用额外声明。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"><span class="attr">a</span>: <span class="built_in">number</span>, <span class="attr">b</span>: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;  <span class="comment">// TypeScript 推导返回值的类型是 number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">greet</span>(<span class="params"><span class="attr">name</span>: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>`</span>;  <span class="comment">// TypeScript 推导返回值的类型是 string</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看ts看到类型推导的时候感觉和Js里的隐式转换很像，就去搜了下这和Js里的隐式转换有什么区别。</p>
+<p>隐式转换是Js中的一种行为，当操作的类型不匹配的时候，Js会尝试将他们转换成兼容的类型。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;10&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = num + str;  <span class="comment">// 隐式转换，结果是字符串 &quot;510&quot;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(result);  <span class="comment">// 输出 &quot;510&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>这个例子中5被自动自动转换成了字符串，这个加法操作就变成了连接操作。</p>
+<p>类型推导和隐式转换有着本质的不同，类型推导发生在编译时，它并不会去改变值得实际类型，而是推断出合适的类型，并用来进行类型检查。而隐式转换发生在运行时，实际值的类型发生了转换，转换成了另一种类型。</p>
+<p>这个不同就让类型推导是Ts里的一个优良的特性，让Ts的代码在运行的时候可以避免一些错误。而隐式转换让代码更简洁的同时会产生很多的错误和问题，而且这些问题通常是难以追踪的。隐式转换之所以叫隐式转换，我想原因应该是开发者无法显式地发现这些类型变化。</p>
+<h2 id="2-Js的隐式转换"><a href="#2-Js的隐式转换" class="headerlink" title="2.Js的隐式转换"></a>2.Js的隐式转换</h2><h3 id="2-1可能导致的安全问题"><a href="#2-1可能导致的安全问题" class="headerlink" title="2.1可能导致的安全问题"></a>2.1可能导致的安全问题</h3><p>Js的隐式转换通常会产生很多的问题，无法显式地看到转换导致很多难以追踪地错误。</p>
+<p>在+<code>、</code>-<code>、``==</code>这些操作时，隐式转换很可能发生以至于产生很多麻烦，比如使用<code>==</code>的时候经常会发生一些莫名奇妙的true，比如Js中把这个null和undefined在进行<code>==</code>操作的时候会出现true。然后0和false也是被认为是相等的。</p>
+<p>就比如</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (userInput == <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// 用户输入为空字符串、0 或 false 会导致这个条件为 true</span></span><br><span class="line">  <span class="comment">// 导致错误的逻辑执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个地方用<code>==</code>就不够安全，userInput的值可以为0，false和空字符串，这都会让这个<code>==</code>成立。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="attr">userInput</span>: <span class="built_in">string</span> = <span class="string">&quot;0&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (userInput == <span class="number">0</span>) &#123;  <span class="comment">// TS 会报错：类型 &#x27;string&#x27; 和 &#x27;number&#x27; 不兼容</span></span><br><span class="line">  <span class="comment">// 不会执行此代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在Ts里通过强制的类型检查就让这种情况发生的可能性大大降低。然后其实用<code>===</code>这种严格的相等也可以解决这个问题。</p>
+<h3 id="2-2性能问题"><a href="#2-2性能问题" class="headerlink" title="2.2性能问题"></a>2.2性能问题</h3><p>虽然隐式转换的性能问题通常不显著，但在一些性能关键的应用中（如循环内的转换或大量数据的处理），隐式转换可能会增加额外的计算负担。尤其是在进行类型转换的逻辑不明确或难以追踪时，可能增加调试成本，导致代码运行效率低下。</p>
+<h3 id="2-3隐式转换带来的一些好处"><a href="#2-3隐式转换带来的一些好处" class="headerlink" title="2.3隐式转换带来的一些好处"></a>2.3隐式转换带来的一些好处</h3><p>隐式转换也有其优势，首先提高了代码的简洁性，少了很多显示的类型转换，不需要进行频繁的显式的转换。其次，这也提高了灵活性和宽容性，在处理不同类型的数据时可以更加宽容和灵活。</p>
+<h3 id="2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"><a href="#2-4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug" class="headerlink" title="2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug"></a>2.4隐式转换是创作者BE有意而为之还是他写得太快搞出来的小bug</h3><p>Js的创始人 <strong>Brendan Eich</strong> 本意是设计一个简单易用的脚本语言，能够快速把网页的交互功能实现，减少代码工作者的代码量。</p>
+<p>就比如<code>==</code>这个运算符在Js里可以实现不同类型的数据类型进行比较。我想他本人可能有意设计了隐式转换，没想到后面Js会更加考虑安全性和可维护性让隐式转换更多成了一种弊端。什么<code>null</code>等于<code>undefined</code>被认为是可行的，还有上面说的自动类型转换让开发者难以发觉这种类似的问题，实际上刚出现的时候作者不是想这么干，我想他那么牛，开发java又开发js的应该不会让这么不严谨的东西存在在自己的语言里。可以说，隐式转换是<strong>有意设计的特性</strong>，但它带来的副作用并不是开发者预期中的行为。随着开发经验的积累和语言的演变，隐式转换带来的问题逐渐被认识到并加以改进（例如 TypeScript 的出现、<code>strict mode</code>、以及对更严格的类型检查的推动）。</p>
+<p>用Ts这类的强类型语言来增强代码的安全性，用严格模式来禁用某些错误的Js特性来确保代码更加安全。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/" data-id="cm9sdooyp0000s8uphziweg34" data-title="Ts的一点点介绍" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">useEffect钩子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">April 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/04/22/Ts%E7%9A%84%E4%B8%80%E7%82%B9%E7%82%B9%E4%BB%8B%E7%BB%8D/">Ts的一点点介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/22/useEffect%E9%92%A9%E5%AD%90-1/">useEffect钩子</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/22/let%E5%92%8Cvar%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/">let和var的一些区别（持续更新）</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/22/%E7%94%A8dify%E5%92%8Ccursor%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AAai%E6%99%BA%E8%83%BD%E7%BF%BB%E8%AF%91%E5%8A%A9%E6%89%8B/">用dify和cursor构建一个ai智能翻译助手</a>
+          </li>
+        
+          <li>
+            <a href="/2024/11/01/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8Cthis%E6%8C%87%E5%90%91%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">原型链和this指向的简单理解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
